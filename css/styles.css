@@ -1,0 +1,29 @@
+body{
+    font-family: 'Inter', sans-serif;
+  }
+  .contenedor{
+    display: grid;  /*PARA TRABAJAR FILAS Y COLUMNAS*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;   /*AQUÍ COLOCAMOS COMO ABAJO PERO LA OTRA FORMA ES POR FRACCION*/
+    grid-template-rows: 150px 150px 150px 120px; /*ACA TAMBIÉN PODRIAMOS PONER POR FRACCION*/
+    gap: 5px;   /*PARA SEPARAR ENTRE FILAS Y COLUMNAS*/
+    width: 800px; /*SI QUIERO ACHICAR EL ANCHO QUE OCUPA DE LA PANTALLA HACEMOS ESO*/
+}
+
+
+
+
+ .contenedor .item{
+    font-size: 30px;    /*AGRAND0MO CARACTER*/
+    background-color: #280000;   /*COLOR AL ESPACIO*/
+    color: white;   /*COLOR AL CARACTER*/
+    text-align: center; /*CENTRo LOS CARACTERES*/
+}
+
+.contenedor .item:hover{          /*HOVER ES PARA CUANDO PONEMOS EL CURSOR POR ENCIMA*/
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+.contenedor .item.igual{      /*ACCEDEMOS AL ITEM "igual"*/
+    grid-column: 2/4;       /*PONEMOS QUE OCUPE DESDE LA 1RA FRACCION A LA 4TA FRACCION*/
+}
