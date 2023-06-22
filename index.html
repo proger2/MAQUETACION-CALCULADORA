@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase sobre grid</title>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,21 +13,28 @@
 </head>
 <body>
     <div class="contenedor">   <!--CREAMOS UN CONTENEDOR-->
-        <div class="item">1</div>  <!--IDENTIFICAMOS ESTE ITEM "UNO"-->
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">%</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-        <div class="item">6</div>
-        <div class="item">x</div>
-        <div class="item">7</div>
-        <div class="item">8</div>
-        <div class="item">9</div>
-        <div class="item">+</div>
-        <div class="item">0</div>
-        <div class="item igual">=</div>
-        <div class="item">-</div>
+        <div class="display">
+            <div id = "valor-anterior"></div>
+            <div id = "valor-actual"></div>
+        </div>
+        <button>C</button>          <!--IDENTIFICAMOS BOTONES -->
+        <button>&larr;</button>     <!--BOTON DE BORRAR CARACTER-->
+        <button>.</button>
+        <button class="numero">1</button> 
+        <button class="numero">2</button>
+        <button class="numero">3</button>  
+        <button>%</button> 
+        <button class="numero">4</button> 
+        <button class="numero">5</button> 
+        <button class="numero">6</button> 
+        <button>X</button> 
+        <button class="numero">7</button> 
+        <button class="numero">8</button> 
+        <button class="numero">9</button> 
+        <button>+</button>
+        <button class="numero">0</button> 
+        <button>=</button> 
+        <button>-</button>  
     </div>
         
 </body>
