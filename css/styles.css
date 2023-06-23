@@ -18,7 +18,7 @@ body{
     border-radius: 32px;
     
 }
-button{                 /*HOVER ES PARA CUANDO PONEMOS EL CURSOR POR ENCIMA*/
+button{                 /* CONFIGURO BOTONES*/
     cursor: pointer;
     margin: 5px;
     padding: 0;
@@ -43,7 +43,7 @@ button:focus{
     align-items: flex-end;      /*para que se vea del lado derecho*/
     background-color: #e4e3e3a1;    /*color del display*/
     border-radius: 32px;        /*le doy un borde radial*/
-    text-align: right;          /*texto de izquierda a derecha*/
+    text-align: right;          /*texto de derecha a izquierda*/
     justify-content: space-between;     /*para que se separe un numero del otro*/
     word-break: break-all;      /*por si se va a dos lineas*/
     box-shadow: 0px 0px 0px 10px #0000003a;    /*sombra del marco del display*/
