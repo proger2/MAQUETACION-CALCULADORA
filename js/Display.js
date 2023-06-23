@@ -6,7 +6,7 @@ class Display {
         this.calculador = new Calculadora();
         this.tipoOperacion = undefined;     /*variable que va a servir para guardar la operacion*/
         this.valorActual = "";                           /*son los numeros que estoy guardando*/
-        this.valorAnterior = "";
+        this.valorAnterior = "";        /*los dejo en string para que se impriman en el display*/
         this.signos = {
             sumar: "+",
             dividir: "/",
@@ -15,11 +15,11 @@ class Display {
         }
     }
     borrar() {
-        this.valorActual = this.valorActual.toString().slice(0,-1);
+        this.valorActual = this.valorActual.toString().slice(0,-1);     /*funcionalidad al boton borrar por caracter*/
         this.imprimirValores();
     }
 
-    borrarTodo() {
+    borrarTodo() {                  /*funcionalidad al boton "C"*/
         this.valorActual = "";
         this.valorAnterior = "";
         this.tipoOperacion = undefined;
@@ -27,17 +27,17 @@ class Display {
         }
     
     
-computar(tipo) {
-    this.tipoOperacion !== "igual" && this.calcular();
-    this.tipoOperacion = tipo;
-    this.valorAnterior = this.valorActual || this.valorAnterior;
-    this.valorActual = "";
-    this.imprimirValores();
+    computar(tipo) {
+        this.tipoOperacion !== "igual" && this.calcular();      /*si la operacion es distinto a "=" sigue calculando*/
+        this.tipoOperacion = tipo;
+        this.valorAnterior = this.valorActual || this.valorAnterior;
+        this.valorActual = "";      /*una vez que se opera el numero, queda un espacio para volver a cargar*/
+        this.imprimirValores();     /*se imprimen los valores*/
     }
 
     agregarNumero(numero){          /*creo un metodo para que reciba numeros como parametros*/
         if (numero === "." && this.valorActual.includes(".")) return 
-        this.valorActual = this.valorActual.toString() + numero.toString();         /*designo el numero que clickeo al valor del display*/
+        this.valorActual = this.valorActual.toString() + numero.toString();      /*designo el numero que clickeo al valor del display*/
         this.imprimirValores();
     }
     imprimirValores() {
@@ -49,9 +49,7 @@ computar(tipo) {
         const valorAnterior = parseFloat(this.valorAnterior);   /*pasa de string a float*/
         const valorActual = parseFloat(this.valorActual);
 
-        if(isNaN(valorActual) || isNaN(valorAnterior) ) return
-        this.valorActual = this.calculador[this.tipoOperacion](valorAnterior,valorActual);
+        if(isNaN(valorActual) || isNaN(valorAnterior) ) return     /*si valor actual como valor anterior no son numeros, no hacer nada*/
+        this.valorActual = this.calculador[this.tipoOperacion](valorAnterior,valorActual); /*si hay valor numerico, selecciona un metodo de la calculadora con el tipo de operador que selecciona el usuario*/
     }
-
-
 }

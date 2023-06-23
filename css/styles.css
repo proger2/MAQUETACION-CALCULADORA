@@ -15,28 +15,28 @@ body{
     grid-template-rows: 160px repeat(5, 75px) ; /*5 filas*/
     background-color: #00916e;
     padding: 15px;      /*separacion de botones*/
-    border-radius: 32px;
+    border-radius: 32px; /*bordes radial*/
     
 }
 button{                 /* CONFIGURO BOTONES*/
-    cursor: pointer;
+    cursor: pointer;    
     margin: 5px;
-    padding: 0;
+    padding: 0;     
     border-radius: 32px;
     font-size: 1.5em;
-    border: none;
+    border: none;       /*saco borde porque el boton por defecto ya tienen*/
     background-color: #00916e;
-    box-shadow: 5px 5px 10px -3px #0000003a, -5px -5px 15px 3px #00ffc11f   
+    box-shadow: 5px 5px 10px -3px #0000003a, -5px -5px 15px 3px #00ffc11f   /*sombras para darle relieve a los botones, utilizando dos colores*/
 }
 button:active{
     background-color: #006f54;
 }
 button:focus{
-    outline: none;
+    outline: none;      /*saque el outline que tiene por defecto porqque no me gustaba*/
 }
 .display{
-    grid-column: 1/-1;
-    padding: 16px;
+    grid-column: 1/-1;      /*le doy el ancho total*/
+    padding: 16px;      /*separacion*/
     display: flex;
     margin: 10px 10px 20px;     /*le doy margen*/
     flex-direction: column;     /*para que se vea un numero arriba del otro cuando estoy operando*/
@@ -48,16 +48,12 @@ button:focus{
     word-break: break-all;      /*por si se va a dos lineas*/
     box-shadow: 0px 0px 0px 10px #0000003a;    /*sombra del marco del display*/
 }
-.simbolo.arriba{
+.simbolo.arriba{        /*caracterizo el espacio que quiero que ocupe el signo "C"*/
     grid-column: span 2;
 }
 
 
-.simbolo.igual{
-    grid-column: span 2;
-}
-
-#valor-actual{
+#valor-actual{          /*le doy su tamaño*/
     font-size: 1.5em;
 }
 #valor-anterior{

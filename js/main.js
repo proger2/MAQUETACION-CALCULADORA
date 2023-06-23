@@ -9,6 +9,6 @@ const display = new Display(displayValorAnterior,displayValorActual);
 botonesNumeros.forEach(boton =>{    /*por cada boton de numeros*/
      boton.addEventListener("click",() => display.agregarNumero(boton.innerHTML));  /* el boton que clickee es el que se va a guardar en el metodo*/
 });
-botonesOperadores.forEach(boton => {
+botonesOperadores.forEach(boton => {      /*por cada boton de operadores*/
      boton.addEventListener("click", () => display.computar(boton.value))
 });
