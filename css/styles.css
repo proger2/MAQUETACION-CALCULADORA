@@ -1,29 +1,65 @@
 body{
+    margin: 0;     /*SACO MARGEN*/
     font-family: 'Inter', sans-serif;
+    background-color: #224870;          /*COLOR DE FONDO*/
   }
   .contenedor{
-    display: grid;  /*PARA TRABAJAR FILAS Y COLUMNAS*/
-    grid-template-columns: 1fr 1fr 1fr 1fr;   /*AQUÍ COLOCAMOS COMO ABAJO PERO LA OTRA FORMA ES POR FRACCION*/
-    grid-template-rows: 150px 150px 150px 120px; /*ACA TAMBIÉN PODRIAMOS PONER POR FRACCION*/
-    gap: 5px;   /*PARA SEPARAR ENTRE FILAS Y COLUMNAS*/
-    width: 800px; /*SI QUIERO ACHICAR EL ANCHO QUE OCUPA DE LA PANTALLA HACEMOS ESO*/
+     display: flex;  /*CENTRAMOS EL CONTENEDOR*/
+     justify-content: center;   /*CENTRAMOS EL CONTENEDOR*/
+     align-items: center;   /*CENTRAMOS EL CONTENEDOR*/
+     height: 100vh; /*BASANDOME EN EL TOTAL DE LA PANTALLA*/
 }
-
-
-
-
- .contenedor .item{
-    font-size: 30px;    /*AGRAND0MO CARACTER*/
-    background-color: #280000;   /*COLOR AL ESPACIO*/
-    color: white;   /*COLOR AL CARACTER*/
-    text-align: center; /*CENTRo LOS CARACTERES*/
+.calculadora{
+    display: grid;
+    grid-template-columns: repeat(4, 75px);     /*4 columnas*/
+    grid-template-rows: 160px repeat(5, 75px) ; /*5 filas*/
+    background-color: #00916e;
+    padding: 15px;      /*separacion de botones*/
+    border-radius: 32px;
+    
 }
-
-.contenedor .item:hover{          /*HOVER ES PARA CUANDO PONEMOS EL CURSOR POR ENCIMA*/
-    background-color: skyblue;
+button{                 /*HOVER ES PARA CUANDO PONEMOS EL CURSOR POR ENCIMA*/
     cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: #00916e;
+    box-shadow: 5px 5px 10px -3px #0000003a, -5px -5px 15px 3px #00ffc11f   
+}
+button:active{
+    background-color: #006f54;
+}
+button:focus{
+    outline: none;
+}
+.display{
+    grid-column: 1/-1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;     /*le doy margen*/
+    flex-direction: column;     /*para que se vea un numero arriba del otro cuando estoy operando*/
+    align-items: flex-end;      /*para que se vea del lado derecho*/
+    background-color: #e4e3e3a1;    /*color del display*/
+    border-radius: 32px;        /*le doy un borde radial*/
+    text-align: right;          /*texto de izquierda a derecha*/
+    justify-content: space-between;     /*para que se separe un numero del otro*/
+    word-break: break-all;      /*por si se va a dos lineas*/
+    box-shadow: 0px 0px 0px 10px #0000003a;    /*sombra del marco del display*/
+}
+.simbolo.arriba{
+    grid-column: span 2;
 }
 
-.contenedor .item.igual{      /*ACCEDEMOS AL ITEM "igual"*/
-    grid-column: 2/4;       /*PONEMOS QUE OCUPE DESDE LA 1RA FRACCION A LA 4TA FRACCION*/
+
+.simbolo.igual{
+    grid-column: span 2;
+}
+
+#valor-actual{
+    font-size: 1.5em;
+}
+#valor-anterior{
+    font-size: size 2em;
 }
